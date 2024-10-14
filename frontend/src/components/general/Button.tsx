@@ -5,10 +5,16 @@ interface ButtonProps {
 
 function Button({ content, variant }: ButtonProps) {
 	const styles = {
-		primary: "py-2 px-4 bg-gray-900 text-white rounded capitalize border",
-		secondary: "py-2 px-4 bg-white border text-gray-900 rounded capitalize",
+		general: "py-2 px-4 rounded capitalize border",
+		primary: "bg-gray-900 text-white",
+		secondary: "bg-white text-gray-900",
 	};
-	return <button className={styles[variant]}>{content}</button>;
+
+	return (
+		<button className={`${styles.general} ${styles[variant]}`}>
+			{content}
+		</button>
+	);
 }
 
 export default Button;
