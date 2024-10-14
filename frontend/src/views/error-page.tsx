@@ -1,6 +1,6 @@
 import { Link, useRouteError } from "react-router-dom";
 
-export default function ErrorPage() {
+function ErrorPage() {
 	const error = useRouteError();
 	const errorMessage =
 		(error as { statusText?: string; message?: string }) || {};
@@ -12,7 +12,11 @@ export default function ErrorPage() {
 			<p>
 				<i>{errorMessage.statusText || errorMessage.message}</i>
 			</p>
-			<Link to="/">Take me back!</Link>
+			<Link to="/" className=" text-bold underline">
+				Take me back!
+			</Link>
 		</div>
 	);
 }
+
+export default ErrorPage;
