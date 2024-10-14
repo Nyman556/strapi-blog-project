@@ -5,7 +5,7 @@ function Layout() {
 	return (
 		<div>
 			<Header />
-			<main>
+			<main className="mx-16 py-4">
 				<Outlet />
 			</main>
 		</div>

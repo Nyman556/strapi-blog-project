@@ -1,10 +1,12 @@
 import "./App.css";
-import Header from "./components/general/Header";
+import BlogPosts from "./components/sections/BlogPosts";
+import Hero from "./components/sections/Hero";
 
 function App() {
 	return (
-		<div className="w-full flex flex-col">
-			<Header />
+		<div>
+			<Hero />
+			<BlogPosts />
 		</div>
 	);
 }
