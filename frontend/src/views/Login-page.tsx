@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import useLogin from "../hooks/useLogin";
 
 function LoginPage() {
@@ -11,6 +11,7 @@ function LoginPage() {
 		handlePasswordChange,
 		login,
 	} = useLogin();
+	const navigate = useNavigate();
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -19,10 +20,7 @@ function LoginPage() {
 		if ("jwt" in response) {
 			localStorage.setItem("jwt", response.jwt);
 			localStorage.setItem("user", JSON.stringify(response.user));
-			Navigate({ to: "/" });
-
-			console.log("Login successful:", response);
-			console.log("User logged in:", response.user);
+			navigate("/");
 		} else {
 			console.log("Login failed:", response.message);
 		}

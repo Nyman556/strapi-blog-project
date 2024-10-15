@@ -41,9 +41,6 @@ const useLogin = () => {
 			);
 
 			if (response.status === 200) {
-				localStorage.setItem("jwt", response.data.jwt);
-				localStorage.setItem("user", JSON.stringify(response.data.user));
-
 				setUser(response.data.user);
 				return {
 					jwt: response.data.jwt,
