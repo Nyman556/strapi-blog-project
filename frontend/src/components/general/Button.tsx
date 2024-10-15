@@ -4,9 +4,10 @@ interface ButtonProps {
 	content: string;
 	variant: "primary" | "secondary";
 	urlPath?: string;
+	onClick?: () => void;
 }
 
-function Button({ content, variant, urlPath }: ButtonProps) {
+function Button({ content, variant, urlPath, onClick }: ButtonProps) {
 	const styles = {
 		general: "py-2 px-4 rounded capitalize border",
 		primary: "bg-gray-900 text-white",
@@ -20,7 +21,9 @@ function Button({ content, variant, urlPath }: ButtonProps) {
 			{content}
 		</Link>
 	) : (
-		<button className={buttonClasses}>{content}</button>
+		<button className={buttonClasses} onClick={onClick}>
+			{content}
+		</button>
 	);
 }
 
