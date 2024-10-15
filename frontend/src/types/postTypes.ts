@@ -3,6 +3,7 @@ export interface BasePost {
 	title: string;
 	excerpt: string;
 	content: string;
-	date: Date;
+	date: string;
 	author: string;
+	createdAt: string;
 }

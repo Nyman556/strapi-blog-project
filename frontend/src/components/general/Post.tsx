@@ -13,7 +13,7 @@ function Post({ post }: PostProps) {
 			<p className="text-xl text-gray-700">{post.excerpt}</p>
 			<div className="flex justify-between">
 				<p>
-					By {post.author} | {post.date.toLocaleDateString()}
+					By {post.author} | {post.date}
 				</p>
 				<Link to={`/${post.id}`} className="flex gap-2 items-center">
 					Read More <FiChevronRight />

@@ -1,32 +1,40 @@
-import Post from "../general/Post";
+import { useEffect, useState } from "react";
+import Post from "../general/Post"; // Ensure this import path is correct
+import { BasePost } from "../../types/postTypes";
 
 function BlogPosts() {
-	const posts = [
-		{
-			id: 1,
-			title: "First Post",
-			excerpt: "This is the first post.",
-			content: "Lorem ipsum",
-			date: new Date(2023, 4, 15),
-			author: "John Doe",
-		},
-		{
-			id: 2,
-			title: "Second Post",
-			excerpt: "This is the second post.",
-			content: "Lorem ipsum",
-			date: new Date(2023, 5, 10),
-			author: "Jane Smith",
-		},
-		{
-			id: 3,
-			title: "Third Post",
-			excerpt: "This is the third post.",
-			content: "Lorem ipsum",
-			date: new Date(2023, 6, 20),
-			author: "Alice Johnson",
-		},
-	];
+	const [posts, setPosts] = useState<BasePost[]>([]);
+	const [loading, setLoading] = useState<boolean>(true);
+	const [error, setError] = useState<string | null>(null);
+
+	useEffect(() => {
+		const fetchPosts = async () => {
+			try {
+				const response = await fetch("http://localhost:1337/api/blog-posts");
+				if (!response.ok) {
+					throw new Error("Network response was not ok");
+				}
+				const data = await response.json();
+				// Assuming the API returns an array of posts
+				setPosts(data.data);
+				console.log(data.data); // Update according to your API response structure
+			} catch (err: any) {
+				setError(err.message);
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		fetchPosts();
+	}, []);
+
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+
+	if (error) {
+		return <div>Error: {error}</div>;
+	}
 
 	return (
 		<section className="blog-posts">
