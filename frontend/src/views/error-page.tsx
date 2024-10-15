@@ -6,7 +6,7 @@ function ErrorPage() {
 		(error as { statusText?: string; message?: string }) || {};
 
 	return (
-		<div className="w-screen h-screen flex flex-col justify-center text-center align-middle">
+		<div className="w-screen h-screen flex flex-col justify-center text-center">
 			<h1 className=" text-3xl">Oops!</h1>
 			<p>Sorry, an unexpected error has occurred.</p>
 			<p>
