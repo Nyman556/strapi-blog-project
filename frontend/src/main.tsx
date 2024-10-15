@@ -8,6 +8,7 @@ import ErrorPage from "./views/Error-page";
 import Layout from "./Layout";
 import LoginPage from "./views/Login-page";
 import SignupPage from "./views/Signup-page";
+import CreatePostPage from "./views/Create-post";
 
 const router = createBrowserRouter([
 	{
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
 			{
 				path: "/signup",
 				element: <SignupPage />,
+			},
+			{
+				path: "/create-post",
+				element: <CreatePostPage />,
 			},
 		],
 	},
