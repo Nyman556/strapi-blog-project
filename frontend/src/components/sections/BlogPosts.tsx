@@ -10,14 +10,14 @@ function BlogPosts() {
 	useEffect(() => {
 		const fetchPosts = async () => {
 			try {
-				const response = await fetch("http://localhost:1337/api/blog-posts");
+				const response = await fetch(
+					"http://localhost:1337/api/blog-posts?populate=*"
+				);
 				if (!response.ok) {
 					throw new Error("Network response was not ok");
 				}
 				const data = await response.json();
-				// Assuming the API returns an array of posts
 				setPosts(data.data);
-				console.log(data.data); // Update according to your API response structure
 			} catch (err: any) {
 				setError(err.message);
 			} finally {
