@@ -29,10 +29,7 @@
       "targetField": "title"
     },
     "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "blog_posts"
+      "type": "string"
     }
   }
 }
