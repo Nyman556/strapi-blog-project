@@ -1,9 +1,12 @@
 export interface BasePost {
 	id: number;
+	slug: string;
 	title: string;
-	excerpt: string;
-	content: string;
-	date: string;
 	author: string;
+	content: string;
 	createdAt: string;
+	date: string;
+	excerpt: string;
+	updatedAt: string;
+	publishedAt: string;
 }
