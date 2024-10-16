@@ -15,7 +15,7 @@ function Post({ post }: PostProps) {
 				<p>
 					By {post.author} | {post.date}
 				</p>
-				<Link to={`/${post.id}`} className="flex gap-2 items-center">
+				<Link to={`/${post.slug}`} className="flex gap-2 items-center">
 					Read More <FiChevronRight />
 				</Link>
 			</div>
