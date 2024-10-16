@@ -9,6 +9,8 @@ import Layout from "./Layout";
 import LoginPage from "./views/Login-page";
 import SignupPage from "./views/Signup-page";
 import CreatePostPage from "./views/Create-post";
+import BlogPostPage from "./views/Blog-post";
+import EditPostPage from "./views/Edit-post";
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
 			{
 				path: "/create-post",
 				element: <CreatePostPage />,
+			},
+			{
+				path: "/:slug",
+				element: <BlogPostPage />,
+			},
+			{
+				path: "/edit/:slug",
+				element: <EditPostPage />,
 			},
 		],
 	},
