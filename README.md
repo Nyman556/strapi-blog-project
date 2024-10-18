@@ -12,11 +12,8 @@ Detta projekt har följande struktur:
 
 ├── /strapi-cms # Strapi headless CMS
 
-└── /frontend # Frontend-applikation
 
 - **/strapi-cms**: Innehåller bloggapplikationen byggd med Strapi som headless CMS.
-- **/frontend**: Innehåller frontend-applikationen som interagerar med Strapi CMS.
-
 ## Syfte
 
 Syftet med denna fallstudie är att:
