@@ -46,19 +46,7 @@ Följ instruktionerna nedan för att ställa in projektet lokalt.
 
 ### Frontend
 
-1. Starta en ny konsol och hoppa till frontend-mappen:
-   ```bash
-   cd strapi-blog-project/frontend
-
-2. Installera nödvändiga paket:
-   ```bash
-   npm install
-   
-3. Starta frontend-applikationen:
-   ```bash
-   npm run dev
-
-4. Öppna din webbläsare och gå till [http://localhost:5173](http://localhost:5173/) (eller den port som används) för att se frontend-applikationen.
+[repo](https://github.com/Nyman556/cms-frontend)
 
 
 ## Användning
